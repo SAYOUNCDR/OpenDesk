@@ -1,11 +1,12 @@
 {
   "extends": "@workspace/typescript-config/nextjs.json",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@workspace/ui/*": ["../../packages/ui/src/*"]
+      "@workspace/ui/globals.css": ["../../packages/ui/src/styles/globals.css"],
+      "@workspace/ui/*": ["../../packages/ui/src/*"],
+      "@workspace/ui": ["../../packages/ui/src/index.tsx"],
+      "@workspace/math": ["../../packages/math/src/add.ts"]
     },
     "plugins": [
       {
