@@ -1,4 +1,5 @@
 import { Button } from "@workspace/ui/components/button"
+import { add } from "@workspace/math"
 
 export default function Page() {
   return (
@@ -7,6 +8,9 @@ export default function Page() {
         <div>
           <h1 className="font-medium">Hello Widget!</h1>
           <Button className="mt-2">Button</Button>
+          <p className="mt-4">
+            1 + 2 = {add(1, 2)}
+          </p>
         </div>
         <div className="text-muted-foreground font-mono text-xs">
           (Press <kbd>d</kbd> to toggle dark mode)
