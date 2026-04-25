@@ -29,12 +29,18 @@ importers:
 
   apps/web:
     dependencies:
+      '@workspace/backend':
+        specifier: workspace:*
+        version: link:../../packages/backend
       '@workspace/math':
         specifier: workspace:*
         version: link:../../packages/math
       '@workspace/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      convex:
+        specifier: ^1.36.1
+        version: 1.36.1(react@19.2.4)
       lucide-react:
         specifier: ^1.9.0
         version: 1.9.0(react@19.2.4)
