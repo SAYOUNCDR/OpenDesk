@@ -1,21 +1,15 @@
-import { Button } from "@workspace/ui/components/button"
-import { add } from "@workspace/math"
+"use client"
+import { useQuery } from "convex/react"
+import { api } from "@workspace/backend/_generated/api"
 
 export default function Page() {
+  const users = useQuery(api.users.getMany)
   return (
-    <div className="flex min-h-svh p-6  justify-center items-center">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Hello Widget!</h1>
-          <Button className="mt-2">Button</Button>
-          <p className="mt-4">
-            1 + 2 = {add(1, 2)}
-          </p>
-        </div>
-        <div className="text-muted-foreground font-mono text-xs">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
+    <div className="flex flex-col min-h-svh p-6 justify-center items-center">
+      <p>Web App</p>
+      {users?.map((user) => (
+        <pre key={user._id}>{user.name}</pre>
+      ))}
     </div>
   )
 }

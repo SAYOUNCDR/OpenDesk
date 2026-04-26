@@ -5,9 +5,11 @@ import { api } from "@workspace/backend/_generated/api"
 export default function Page() {
   const users = useQuery(api.users.getMany)
   return (
-    <div className="flex min-h-svh p-6  justify-center items-center">
+    <div className="flex flex-col min-h-svh p-6 justify-center items-center">
       <p>Web App</p>
-      <pre>{JSON.stringify(users, null, 2)}</pre>
+      {users?.map((user) => (
+        <pre key={user._id}>{user.name}</pre>
+      ))}
     </div>
   )
 }
