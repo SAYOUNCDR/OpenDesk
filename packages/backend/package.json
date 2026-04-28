@@ -9,6 +9,7 @@
         "./*": "./*"
     },
     "devDependencies": {
+        "@types/node": "^25.1.0",
         "@workspace/typescript-config": "workspace:*",
         "typescript": "latest"
     },
